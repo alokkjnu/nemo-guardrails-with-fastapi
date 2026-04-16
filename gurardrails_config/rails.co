@@ -47,3 +47,9 @@ def flow fact check output
     if $halluncination == "yes"
         bot say "I'm not fully confident in that answer. Please verify"
 
+
+#########################################################################
+# AGENT / TOOL SECURITY
+#########################################################################
+
+
