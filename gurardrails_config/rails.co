@@ -33,3 +33,17 @@ define flow enforce allowed topics
 
     user intent not in ["general","product","support"]
     bot refuse to respond
+
+##########################################################################
+# OUTPUT SAFETY
+##########################################################################
+define flow self check output
+    $unsafe = excute self_check_output
+    if $unsafe == "yes"
+        bot refuse to respond
+
+def flow fact check output
+    $halluncination = execute detect_hallucination
+    if $halluncination == "yes"
+        bot say "I'm not fully confident in that answer. Please verify"
+
