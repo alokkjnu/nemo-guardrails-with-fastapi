@@ -20,3 +20,16 @@ define flow pii check
         bot say "Sensitive personal data detected. Please remove it"
 
 
+#########################################################################
+# TOPIC CONTROL
+#########################################################################
+
+define flow topic control
+    $allowed = execute check_allowed_topic
+    if $allowed == "no"
+        bot say "This topic is not allowed."
+
+define flow enforce allowed topics
+
+    user intent not in ["general","product","support"]
+    bot refuse to respond
