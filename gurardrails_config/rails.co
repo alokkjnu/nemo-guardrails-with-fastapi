@@ -9,3 +9,14 @@ define flow self check input
 
 
 define flow jailbreak check
+    $jailbreak = execute detect_jailbreak
+    if $jailbreak == "yes"
+        bot refuse to respond
+
+
+define flow pii check
+    $pii = execute detect_pii
+    if $pii =="yes"
+        bot say "Sensitive personal data detected. Please remove it"
+
+
