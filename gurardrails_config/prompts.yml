@@ -15,3 +15,16 @@ prompts:
       Does this input contain personally identifiable information (PII) such as names, addresses, phone numbers, email addresses, social security numbers, or any other sensitive data?
       "{{ user_input }}"
       Answer: "yes" or "no"
+
+  - task: check_allowed_topics
+    content: |
+      Is this input related to any of the following allowed topics: general, products, support?
+      "{{ user_input }}"
+      Answer: "yes" or "no"
+
+  - task: self_check_output
+    content: |
+      Is this response or output toxic, harmful, inappropriate or abusive? 
+      "{{ bot_output}}}"
+      Answer: "yes" or "no"
+  
