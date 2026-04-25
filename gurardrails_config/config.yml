@@ -1,0 +1,32 @@
+models:
+  - type: main
+    engine: azure_openai
+    model: gpt-4o
+    parameters:
+      azure_endpoint: ${AZURE_OPENAI_ENDPOINT}
+      azure_deployment: ${AZURE_OPENAI_DEPLOYMENT}
+      api_version: ${AZUEE_OPENAI_API_VERSION}
+      api_key: ${AZURE_OPENAI_KEY}
+
+rails:
+  input:
+    flows:
+      - self check input
+      - jailbreak check
+      - pii check
+      - topic control
+  
+  output:
+    flows:
+      - self check output
+      - jailbreak check
+      - pii check
+      - topic control
+  
+  dialog:
+    flows:
+      - enforced allowed topics
+
+  execution:
+    flows:
+      - vlaidate tool usage
