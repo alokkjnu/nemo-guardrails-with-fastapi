@@ -1,0 +1,10 @@
+define flow self check input
+    $unsafe = execute self_check_input
+    if $unsafe =="yes"
+        bot refuse to respond
+    
+
+define flow jailbreak check
+    $jailbreak = execute detect_jailbreak
+    if $jailbreak == "yes"
+        bot refuse to respond
