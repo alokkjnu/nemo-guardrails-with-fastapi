@@ -1,0 +1,19 @@
+models:
+  - type: "openai"
+    engine: "azure_openai"
+    model : "gpt-4o"
+    parameters:
+      azure_endpoint: "${AZURE_OPENAI_ENDPOINT}"
+      azure_deployment: "${AZURE_OPENAI_DEPLOYMENT}"
+      api_key: "${AZURE_OPENAI_KEY}"
+      api_version:: "${AZURE_OPENAI_VERSION}"
+
+  
+
+rails:
+  input:
+    flows:
+      - self check input
+      - jailbreak check
+      - pii check
+      - topic control
